@@ -31,14 +31,14 @@ Upload sourcemaps to Raygun
 ```
 Usage: raygun-cli sourcemap --uri=<uri> --app-id=<app-id> --token=<token>
 
--h, --help         Print sourcemap usage information.
--p, --platform     Specify project platform. Supported: [flutter]
-                   (defaults to "flutter")
--m, --input-map    Input sourcemap file
-                   (defaults to "build/web/main.dart.js.map")
-    --uri          Application URI (e.g. https://example.com/main.dart.js)
-    --app-id       Raygun's application ID
-    --token        Raygun's access token
+-h, --help                  Print sourcemap usage information.
+    --app-id (mandatory)    Raygun's application ID
+    --token (mandatory)     Raygun's access token
+-p, --platform              Specify project platform. Supported: [flutter, node]
+                            (defaults to "flutter")
+-m, --input-map             Input sourcemap file
+    --uri                   Application URI (e.g. https://localhost:3000/main.dart.js)
+    --base-uri              Base application URI (e.g. https://localhost:3000/)
 ```
 
 For example, from your Flutter project folder:

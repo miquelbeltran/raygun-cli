@@ -4,7 +4,7 @@ version: 0.0.1
 # repository: https://github.com/my_org/my_repo
 
 executables:
-  raygun-cli: 'raygun_cli.dart'
+  raygun-cli: 'raygun_cli'
 
 environment:
   sdk: ^3.5.0

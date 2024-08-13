@@ -1,7 +1,7 @@
 import 'dart:io';
 import 'package:http/http.dart' as http;
 
-void uploadSourcemap({
+Future<bool> uploadSourcemap({
   required String appId,
   required String token,
   required String path,
@@ -10,9 +10,9 @@ void uploadSourcemap({
   final file = File(path);
   if (!file.existsSync()) {
     print('$path: file not found!');
-    exit(1);
+    return false;
   }
-  print('Uploading...');
+  print('Uploading: $path');
 
   // curl -X PUT 'https://api.raygun.com/v3/applications/{your-application-identifier}/source-maps' \
   // -H 'Authorization: Bearer YOUR_PERSONAL_ACCESS_TOKEN' \
@@ -40,9 +40,9 @@ void uploadSourcemap({
   final res = await request.send();
   if (res.statusCode == 200) {
     print('File uploaded succesfully!');
-    exit(0);
+    return true;
   } else {
     print('Error uploading file. Response code: ${res.statusCode}');
-    exit(1);
+    return false;
   }
 }
