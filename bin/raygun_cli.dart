@@ -1,4 +1,5 @@
 import 'package:args/args.dart';
+import 'package:raygun_cli/sourcemap/sourcemap_command.dart';
 
 const String version = '0.0.1';
 
@@ -20,6 +21,10 @@ ArgParser buildParser() {
       'version',
       negatable: false,
       help: 'Print the tool version.',
+    )
+    ..addCommand(
+      kSourcemapCommand,
+      buildParserSourcemap(),
     );
 }
 
@@ -47,8 +52,11 @@ void main(List<String> arguments) {
       verbose = true;
     }
 
-    // Act on the arguments provided.
-    print('Positional arguments: ${results.rest}');
+    if (results.command?.name == kSourcemapCommand) {
+      parseSourcemapCommand(results.command!, verbose);
+      return;
+    }
+
     if (verbose) {
       print('[VERBOSE] All arguments: ${results.arguments}');
     }
