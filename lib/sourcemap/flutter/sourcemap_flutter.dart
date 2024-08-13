@@ -1,5 +1,3 @@
-import 'dart:io';
-
 import 'package:args/args.dart';
 import 'package:raygun_cli/sourcemap/sourcemap_api.dart';
 
@@ -13,10 +11,6 @@ void sourcemapFlutter(ArgResults command, bool verbose) {
     print('token: $token');
     print('input-map: $path');
     print('uri: $uri');
-  }
-  if (!File(path).existsSync()) {
-    print('$path: file not found!');
-    return;
   }
   uploadSourcemap(appId: appId, token: token, path: path, uri: uri);
 }
