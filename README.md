@@ -24,12 +24,6 @@ Or use directly from sources:
 dart bin/raygun_cli.dart <command> <arguments>
 ```
 
-TODO: 
-
-- Upload to pub.dev
-- Release binaries
-
-
 #### Sourcemap Uploader
 
 Upload sourcemaps to Raygun
@@ -52,3 +46,11 @@ For example, from your Flutter project folder:
 ```
 raygun-cli sourcemap --uri=https://example.com/main.dart.js --app-id=APP_ID --token=TOKEN
 ```
+
+## TODO
+
+- [ ] Generate and distribute binaries
+- [ ] Upload to pub.dev
+- [ ] Support more platforms (node and other JS projects)
+- [ ] Add more useful commands
+- [ ] Support config files (e.g. `.raygun.conf` to read values like `uri` and `app-id`)
