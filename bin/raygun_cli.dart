@@ -29,7 +29,7 @@ ArgParser buildParser() {
 }
 
 void printUsage(ArgParser argParser) {
-  print('Usage: dart raygun_cli.dart <flags> [arguments]');
+  print('Usage: raygun-cli <flags> [arguments]');
   print(argParser.usage);
 }
 
@@ -40,12 +40,13 @@ void main(List<String> arguments) {
     bool verbose = false;
 
     // Process the parsed arguments.
-    if (results.wasParsed('help')) {
+    if (results.wasParsed('help') ||
+        (results.options.isEmpty && results.command == null)) {
       printUsage(argParser);
       return;
     }
     if (results.wasParsed('version')) {
-      print('raygun_cli version: $version');
+      print('raygun-cli version: $version');
       return;
     }
     if (results.wasParsed('verbose')) {

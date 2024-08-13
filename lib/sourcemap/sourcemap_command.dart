@@ -40,7 +40,7 @@ ArgParser buildParserSourcemap() {
 void parseSourcemapCommand(ArgResults command, bool verbose) {
   if (command.wasParsed('help')) {
     print(
-        'Usage: dart raygun_cli.dart sourcemap --uri=<uri> --app-id=<app-id> --token=<token>');
+        'Usage: raygun-cli sourcemap --uri=<uri> --app-id=<app-id> --token=<token>');
     print(buildParserSourcemap().usage);
     return;
   }
@@ -54,6 +54,6 @@ void parseSourcemapCommand(ArgResults command, bool verbose) {
     }
   } else {
     print(
-        'Missing arguments. Use "raygun_cli sourcemap --help" for more information.');
+        'Missing arguments. Use "raygun-cli sourcemap --help" for more information.');
   }
 }

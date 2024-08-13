@@ -3,6 +3,9 @@ description: A sample command-line application with basic argument parsing.
 version: 0.0.1
 # repository: https://github.com/my_org/my_repo
 
+executables:
+  raygun-cli: 'raygun_cli.dart'
+
 environment:
   sdk: ^3.5.0
 
